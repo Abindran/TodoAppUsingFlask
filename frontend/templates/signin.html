@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<form class="form container" action="/signin" method="post">
+    <h1 class="text-center mt-4 mb-4">Todo App</h1>
+    <hr class="mx-n3">
+    <h2 class="text-center mt-3">SignIn</h2>
+    <div class="form-group mt-5">
+        <label for="exampleInputEmail1">Email address</label>
+        <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input type="password" class="form-control" name="password" id="exampleInputPassword1" required>
+    </div>
+    {% if not isSignedIn %}
+        <div class="alert alert-danger" role="alert">
+            Wrong Username or Password
+        </div>
+    {% endif %}
+    <button type="submit" class="btn btn-primary btn-block">LogIn</button>
+</form>
+
+
+{% endblock %}

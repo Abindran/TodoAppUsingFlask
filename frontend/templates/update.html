@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="container">
+    <h1 class="text-center mt-6 mb-4">Update task in the todo list</h1>
+    <form action="/update/{{task['id']}}" method="POST">
+
+        <div class="form-group">
+            <label for="formGroupExampleInput">Task</label>
+            <textarea class="form-control" id="task" rows="3" name="task"  required>{{task['task']}}</textarea>
+        </div>
+        <div class="form-group row">
+            <label for="duedate" class="col-sm-2 col-form-label">Due Date: </label>
+            <div class="col-sm-10">
+                <input type="date" name="dueby" class="form-control-plaintext" id="duedate" value="{{task['dueby']}}" required>
+            </div>
+        </div>
+
+        <div class="form-group row mb-4">
+            <label for="status" class="col-sm-2 col-form-label" >Status: </label>
+
+            <select name="status" id="status" class="dropdown show" value="{{task['status']}}" required>
+                <option value="Not Started">Not Started</option>
+                <option value="In Progress">In Progress</option>
+                <option value="Finished">Finished</option>
+            </select>
+
+
+        </div>
+
+
+
+        <input type="submit" class="btn btn-primary btn-lg btn-block">
+
+    </form>
+</div>
+{% endblock %}

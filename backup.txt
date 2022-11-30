@@ -1,0 +1,8 @@
+mysql-connector-python==8.0.31
+flask==2.0.3
+flask-restplus==0.13.0
+werkzeug>=0.15,<0.16
+itsdangerous==2.0.1
+jinja2==2.11.3
+markupsafe==2.0.1
+flask-cors==3.0.10
